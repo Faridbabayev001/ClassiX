@@ -1,0 +1,25 @@
+<%	 @categories.each do |category| %>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="category-box border-8 wow fadeInUpQuick" data-wow-delay="2.3s">
+      <div class="icon">
+        <a href="category.html"></a>
+      </div>
+      <div class="category-header">
+        <a href="category.html"><h4><%= category.name %></h4></a>
+      </div>
+      <div class="category-content">
+        <ul>
+          <% category.sub_categories.take(6).each do |subCategory| %>
+            <li>
+              <a href="category.html"><%= subCategory.name %></a>
+              <sapn class="category-counter">3</sapn>
+            </li>
+            <% end %>
+          <li>
+            <a href="category.html">View all subcategories →</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
